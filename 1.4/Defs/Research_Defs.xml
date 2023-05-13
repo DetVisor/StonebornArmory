@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>SA_StonebornResearchCore</defName>
+    <label>stoneborn research core</label>
+    <description>Increases research speed when placed near hi-tech research bench and unlocks new research projects. Each research bench can only use one multi-analyzer.</description>
+    <graphicData>
+      <texPath>Things/ResearchCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.46875</drawSize>
+    </graphicData>
+    <uiIconScale>0.85</uiIconScale>
+    <researchPrerequisites><li>SA_ResearchCoreProject</li></researchPrerequisites>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc5</designationHotKey>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>15000</WorkToBuild>
+      <Mass>67</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Steel>120</Steel>
+      <Plasteel>55</Plasteel>
+      <Gold>25</Gold>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>270</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.22</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>2</maxSimultaneous>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <ResearchProjectDef>
+    <defName>SA_ResearchCoreProject</defName>
+    <label>stoneborn knowledge</label>
+    <description>Build stoneborch research cores which increase research speed and allow you to tap into the knowledge of the famed stoneborn.</description>
+    <baseCost>5000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MultiAnalyzer</li>
+    </prerequisites>
+    <hiddenPrerequisites>
+      <li>Machining</li>
+    </hiddenPrerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <researchViewX>13.00</researchViewX>
+    <researchViewY>3.50</researchViewY>
+    <discoveredLetterTitle>About: Knowledge of the stoneborn</discoveredLetterTitle>
+    <discoveredLetterText>It is said that during the birth of the first genetic alteration machines, in a galaxy full of potential and dangers, the stoneborn were created. \n\nTough, short, and as tenacious as ever, they erected compounds, mined mountains and dominated caveworlds for eons, they carried entire societies on their backs, thanks to their skills and abilities. \n\nThey created many wonders, powerful weapons capable of incinerating insectoid swarms, crafted with the best metals and stones, chestplates that can easily deflect and shatter a scyther's blade, lichens that become flour with just one touch.. With the core unlocked, and this new research branch, you'll finally be able to tap into the impressive designs of the stoneborn. \n\nRock and stone, my friend!</discoveredLetterText>
+  </ResearchProjectDef>
+
+</Defs>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="RockBase">
+    <defName>FoamWall</defName>
+    <label>foam wall</label>
+    <description>Quick-expanding foam compacted into a light wall. Good for sealing caves.</description>
+    <graphicData>
+      <texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <color>(193,156,77)</color>
+      <colorTwo>(202,175,101)</colorTwo>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <coversFloor>false</coversFloor>
+    <building>
+      <isResourceRock>false</isResourceRock>
+      <claimable>false</claimable>
+      <isNaturalRock>false</isNaturalRock>
+    </building>
+    <comps>
+      <li Class="CompProperties_Lifespan">
+        <lifespanTicks>14000</lifespanTicks>
+        <expireEffect>RaisedRock_Collapse</expireEffect>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <DamageDef>
+    <defName>SA_Nyx</defName>
+    <label>nyx</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has died to nyx affliction.</deathMessage>
+    <hediff>SA_NyxAffliction</hediff>
+     <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+  <additionalHediffs>
+    <li>
+      <hediff>SA_NyxAffliction</hediff>
+      <severityPerDamageDealt>0.3</severityPerDamageDealt>
+    </li>
+  </additionalHediffs>
+    <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~1</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <defaultDamage>8</defaultDamage>
+  	<explosionCellFleck>BlastEMP</explosionCellFleck>
+    <defaultArmorPenetration>0.5</defaultArmorPenetration>
+	  <defaultStoppingPower>1.2</defaultStoppingPower>
+    <buildingDamageFactorImpassable>0.4</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>0.2</buildingDamageFactorPassable>
+	  <soundExplosion>Explosion_Stun</soundExplosion>
+  </DamageDef>
+
+</Defs>

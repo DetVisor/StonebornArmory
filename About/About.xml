@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+	<name>Stoneborn Armory</name>
+	<author>DetVisor</author>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<packageId>detvisor.stonebornarmory</packageId>
+	<url></url>
+	<description>
+      Stories and tales of talented Stoneborn engineers forging legendary weapons are told all over the cosmos.
+	</description>
+	<modDependencies>
+		<li>
+		 <packageId>smartkar.athenaframework</packageId>
+		 <displayName>Athena Framework</displayName>
+		 <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2903359518</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+	</loadAfter>
+	<incompatibleWith />
+</ModMetaData>

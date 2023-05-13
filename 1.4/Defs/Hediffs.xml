@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef>
+    <defName>SA_NyxAffliction</defName>
+    <label>nyx affliction</label>
+    <description>Atoms forming the body have been destabilized by a nyx field, causing issues with the natural regenerations due to cells not being able to function.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
+    <tendable>false</tendable>
+    <lethalSeverity>1</lethalSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Immunizable">
+        <compClass>HediffComp_ImmunizableToxic</compClass>
+        <severityPerDayNotImmune>-0.08</severityPerDayNotImmune>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>initial</label>
+        <minSeverity>0.2</minSeverity>
+        <painFactor>1.1</painFactor>
+        <naturalHealingFactor>0.95</naturalHealingFactor>
+        <totalBleedFactor>1.1</totalBleedFactor>
+      </li>
+      <li>
+        <label>moderate</label>
+        <minSeverity>0.8</minSeverity>
+        <painFactor>1.25</painFactor>
+        <naturalHealingFactor>0.80</naturalHealingFactor>
+        <totalBleedFactor>1.2</totalBleedFactor>
+      </li>
+      <li>
+        <label>serious</label>
+        <minSeverity>1.2</minSeverity>
+        <painFactor>1.45</painFactor>
+        <naturalHealingFactor>0.65</naturalHealingFactor>
+        <totalBleedFactor>1.35</totalBleedFactor>
+      </li>
+      <li>
+        <label>extreme</label>
+        <minSeverity>1.8</minSeverity>
+        <painFactor>1.55</painFactor>
+        <naturalHealingFactor>0.45</naturalHealingFactor>
+        <totalBleedFactor>1.60</totalBleedFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.80</setMax>
+          </li>
+        </capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>Carcinoma</hediff>
+            <mtbDays>39</mtbDays>
+            <canAffectAnyLivePart>true</canAffectAnyLivePart>
+          </li>
+        </hediffGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+
+
+</Defs>

@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- Squatcannon -->
+
+  <ThingDef ParentName="BaseGunWithQuality">
+    <techLevel>Spacer</techLevel>
+    <defName>SA_Squatcannon</defName>
+    <label>squatcannon</label>
+    <description>A short revolver pistol built to accompany its larger brother, the stoutrifle. It packs a massive punch with every shot, and its size allows its user to quickly acquire his or her target. Such stopping power is always welcome in a infested tunnel to make a megaspider drop dead, though its single-fire design has drawn many complaints from trigger-happy stoneborn.</description>
+    <graphicData>
+      <drawSize>1.02</drawSize>
+      <texPath>Things/Weapons/Squatcannon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	    <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+	  <weaponTags>
+      <li>DwarfBasic</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <statBases>
+	  <MarketValue>1100</MarketValue> 
+	    <DeteriorationRate>0</DeteriorationRate>
+      <Mass>3.4</Mass>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.55</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+
+    <costList>
+      <Steel>65</Steel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BoltShot</defaultProjectile>
+        <warmupTime>1.1</warmupTime>
+        <range>20</range>
+        <soundCast>Bolt_Bang</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+<!-- Stoutrifle -->
+
+  <ThingDef ParentName="BaseGunWithQuality">
+    <techLevel>Spacer</techLevel>
+    <defName>SA_Stoutrifle</defName>
+    <label>stoutrifle</label>
+    <description>A sturdy and compact firearm designed to fire obscenely large rounds repeatedly. Built for close-quarter fights underground, where there's little room to maneuver, the weapon is meant to decisively win battles by (hopefully) gibbing whoever or whatever is on the wrong end of it. Not even its designers are able to properly control its recoil, and the size of its ammo limits its drum magazine's capacity. But when going up against massive beasts or armored opponents, its sheer stopping power and kinetic force is well appreciated.</description>
+    <graphicData>
+      <drawSize>1.04</drawSize>
+      <texPath>Things/Weapons/Stoutrifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	    <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+	<weaponTags>
+      <li>DwarfBasic</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <statBases>
+	  <MarketValue>1400</MarketValue> 
+	  <DeteriorationRate>0</DeteriorationRate>
+      <Mass>3.3</Mass>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.50</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>95</Steel>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BoltShot</defaultProjectile>
+        <warmupTime>1.6</warmupTime>
+        <range>27.5</range>
+		    <burstShotCount>4</burstShotCount>
+		    <ticksBetweenBurstShots>21</ticksBetweenBurstShots>
+        <soundCast>Bolt_Bang</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+	  <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+<!-- Magmablaster -->
+
+  <ThingDef ParentName="BaseGunWithQuality">
+    <techLevel>Spacer</techLevel>
+    <defName>SA_Magmablaster</defName>
+    <label>magmablaster</label>
+    <description>A rugged blaster built to deliver powerful blasts of superhot plasma. Its original design comes from modified welding torches that the early stoneborn used to drive off insectoid raids, using makeshift capacitors and roughshod electromagnetic coils. Nowadays, it has been refined into military-grade hardware that can melt metal for welds and carapaces for combat.</description>
+    <graphicData>
+      <drawSize>1.04</drawSize>
+      <texPath>Things/Weapons/Magmablaster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	    <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+	<weaponTags>
+      <li>DwarfSpecial</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+	  <MarketValue>1800</MarketValue> 
+	  <DeteriorationRate>0</DeteriorationRate>
+      <Mass>3.3</Mass>
+      <AccuracyTouch>0.92</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.55</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>105</Steel>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>AthenaFramework.Verb_ShootAngularShotgun</verbClass> 
+        <hasStandardCommand>true</hasStandardCommand>       
+        <defaultProjectile>PlasmaShot</defaultProjectile>
+        <warmupTime>1.4</warmupTime>
+        <range>22</range>
+        <soundCast>Plasma_Pew</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+	  <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="AthenaFramework.AngularShotgunExtension">
+        <pelletCount>5</pelletCount>
+        <pelletAngle>3</pelletAngle>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+<!-- Roofbreaker -->
+
+    <ThingDef ParentName="BaseGunWithQuality">
+    <techLevel>Spacer</techLevel>
+    <defName>SA_Roofbreaker</defName>
+    <label>roofbreaker</label>
+    <description>A short revolver pistol built to accompany its larger brother, the stoutrifle. It packs a massive punch with every shot, and its size allows its user to quickly acquire his or her target. Such stopping power is always welcome in a infested tunnel to make a megaspider drop dead, though its single-fire design has drawn many complaints from trigger-happy stoneborn.</description>
+    <graphicData>
+      <drawSize>1.2</drawSize>
+      <texPath>Things/Weapons/Roofbreaker</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	    <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+	  <weaponTags>
+      <li>DwarfSpecial</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+	  <MarketValue>1100</MarketValue> 
+	    <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+      <AccuracyTouch>0.31</AccuracyTouch>
+      <AccuracyShort>0.58</AccuracyShort>
+      <AccuracyMedium>0.38</AccuracyMedium>
+      <AccuracyLong>0.24</AccuracyLong>
+      <RangedWeapon_Cooldown>2.1</RangedWeapon_Cooldown>
+    </statBases>
+
+    <costList>
+      <Steel>65</Steel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BreakerRocketTEST</defaultProjectile>
+        <warmupTime>1.1</warmupTime>
+        <range>22.5</range>
+        <soundCast>RocketswarmLauncher_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+        <targetParams>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetBuildings>true</canTargetBuildings>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+<!-- Chainborer -->
+
+    <ThingDef ParentName="BaseGunWithQuality">
+    <techLevel>Spacer</techLevel>
+    <defName>SA_Chainborer</defName>
+    <label>chainborer</label>
+    <description>A sturdy and compact firearm designed to fire obscenely large rounds repeatedly. Built for close-quarter fights underground, where there's little room to maneuver, the weapon is meant to decisively win battles by (hopefully) gibbing whoever or whatever is on the wrong end of it. Not even its designers are able to properly control its recoil, and the size of its ammo limits its drum magazine's capacity. But when going up against massive beasts or armored opponents, its sheer stopping power and kinetic force is well appreciated.</description>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <graphicData>
+      <drawSize>1.3</drawSize>
+      <texPath>Things/Weapons/Chainborer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	    <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+	<weaponTags>
+      <li>DwarfSpecial</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <statBases>
+	  <MarketValue>1900</MarketValue> 
+	  <DeteriorationRate>0</DeteriorationRate>
+      <Mass>3.3</Mass>
+      <AccuracyTouch>0.62</AccuracyTouch>
+      <AccuracyShort>0.42</AccuracyShort>
+      <AccuracyMedium>0.28</AccuracyMedium>
+      <AccuracyLong>0.10</AccuracyLong>
+      <RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>95</Steel>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>AthenaFramework.Verb_ShootMinigun</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BoltShot</defaultProjectile>
+        <warmupTime>2</warmupTime>
+        <range>23.5</range>
+        <burstShotCount>25</burstShotCount>
+		    <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <soundCast>Bolt_Bang</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>6</muzzleFlashScale>
+        <targetParams>
+		      	<canTargetLocations>true</canTargetLocations>
+	      </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>body</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+	  <li>
+        <label>muzzle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="AthenaFramework.MinigunExtension">
+        <maxSpeed>06</maxSpeed >
+        <speedPerTick>0.005</speedPerTick>
+        <unlimitedBurst>false</unlimitedBurst>
+        <standingOnly>true</standingOnly>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+<!-- Barricade Gun -->
+
+    <ThingDef ParentName="BaseGunWithQuality">
+    <techLevel>Spacer</techLevel>
+    <defName>SA_BarricadeGun</defName>
+    <label>barricade gun</label>
+    <description>A mix of a caulking gun and a t-shirt cannon, this intriguing piece of stoneborn engineering fires globs of quick-expansion foam that solidify into temporary walls.  Traditionally used by stoneborn to seal up caves during infestations, it has also found use throughout the rim as a fast and efficient way to create cover during raids.\n\nThe foam walls created by the barricade gun aren't particularly solid, can be destroyed quickly and will decay in less than a day, but they're a great way to seal away your issues for a while.</description>
+    <graphicData>
+      <drawSize>1.3</drawSize>
+      <texPath>Things/Weapons/BarricadeGun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	    <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+	  <weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <statBases>
+	  <MarketValue>1100</MarketValue> 
+	    <DeteriorationRate>0</DeteriorationRate>
+      <Mass>3.4</Mass>
+      <AccuracyTouch>0.62</AccuracyTouch>
+      <AccuracyShort>0.58</AccuracyShort>
+      <AccuracyMedium>0.36</AccuracyMedium>
+      <AccuracyLong>0.19</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>65</Steel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>FoamBubble</defaultProjectile>
+        <warmupTime>1.1</warmupTime>
+        <burstShotCount>3</burstShotCount>
+		    <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+        <range>19.4</range>
+        <soundCast>Explosion_FirefoamPopper</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>2</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+<!-- Forgehammer -->
+
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <techLevel>Spacer</techLevel>
+    <defName>SA_Forgehammer</defName>
+    <label>forgehammer</label>
+    <description>A hefty implement built for bashing in the nearest enemy's head as well as tempering a weapon on an anvil. Few are made and fewer are sold, as the stoneborn masters of either craft or combat prize their industry-enhancing capabilities. Using the energy core implanted into the head, glowing as if magma flows within its channels, it superheats its faces. In the forge, it enables its maker to swiftly fashion metal into tools and weapons; on the battlefield, it scorches flesh as intensely as a ceaseless grudge.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Forgehammer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	    <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+      <drawSize>1.4</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+	<weaponTags>
+      <li>MeleeBlunt</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <statBases>
+	  <MarketValue>2000</MarketValue> 
+	  <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+    </statBases>
+	<equippedAngleOffset>-65</equippedAngleOffset>
+    <costList>
+      <Steel>45</Steel>
+	    <Plasteel>55</Plasteel>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>2.2</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>Burn</def>
+            <amount>8</amount>
+            <chance>0.8</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+    <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <techLevel>Spacer</techLevel>
+    <defName>SA_NyxSplitter</defName>
+    <label>nyx splitter</label>
+    <description>A heavy-duty axe built to cleanly cut targets using a specialized disruption field around the blade. Its nyx field destabilizes atoms, allowing the weapon to slice through metal, bone, and flesh with ease. The resulting cellular damage causes gashes to regenerate slower than usual.</description>
+    <graphicData>
+      <texPath>Things/Weapons/NyxSplitter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	    <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+      <drawSize>1.4</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+  	<weaponTags>
+      <li>MeleePiercer</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <statBases>
+	  <MarketValue>2000</MarketValue> 
+	  <DeteriorationRate>0</DeteriorationRate>
+      <Mass>4.3</Mass>
+    </statBases>
+	<equippedAngleOffset>-65</equippedAngleOffset>
+    <costList>
+      <Steel>45</Steel>
+	    <Plasteel>55</Plasteel>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>2.2</cooldownTime>
+        <armorPenetration>0.3</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>SA_Nyx</def>
+            <amount>0.4</amount>
+            <chance>0.9</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+-->
+  <!-- Bullet -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BoltShot</defName>
+    <label>bolter shot</label>
+    <graphicData>
+      <texPath>Things/Bullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>19</damageAmountBase>
+	    <armorPenetrationBase>0.60</armorPenetrationBase>
+      <speed>80</speed>
+    </projectile>
+    <!--
+    <comps>      
+      <li Class="AthenaFramework.CompProperties_ProjectileImpactEffect">
+      <fleck>Fleck_Burn</fleck>
+      </li>
+    </comps>
+    -->
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>FoamBubble</defName>
+    <label>foam bubble</label>
+    <graphicData>
+      <texPath>Things/BulletFoam</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>1</damageAmountBase>
+	    <armorPenetrationBase>0</armorPenetrationBase>
+      <speed>52</speed>
+    </projectile>
+      <comps>
+        <li Class="AthenaFramework.CompProperties_ProjectileThingSpawner">
+          <spawnedDef>FoamWall</spawnedDef>
+          <previousTile>true</previousTile>
+        </li>
+      </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BreakerRocketTEST</defName>
+    <label>breaker rocket</label>
+    <graphicData>
+      <texPath>Things/BulletRocket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <speed>38</speed>
+      <damageAmountBase>15</damageAmountBase>
+      <arcHeightFactor>0.4</arcHeightFactor>
+      <soundExplode>Explosion_Rocket</soundExplode>
+    </projectile>
+      <comps>
+        <li Class="AthenaFramework.CompProperties_ProjectileRoofCollapse">
+          <collapseRange>2</collapseRange>
+        </li>
+      </comps>
+  </ThingDef>
+
+  <!--
+  <ThingDef>
+    <defName>BreakerRocket</defName>
+    <label>breaker rocket</label>
+    <thingClass>Projectile_Bullet</thingClass>
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    <graphicData>
+      <texPath>Things/BulletRocket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <explosionRadius>1.5</explosionRadius>
+      <speed>38</speed>
+      <damageAmountBase>15</damageAmountBase>
+      <arcHeightFactor>0.4</arcHeightFactor>
+      <soundExplode>Explosion_Rocket</soundExplode>
+    </projectile>
+      <comps>
+        <li Class="AthenaFramework.CompProperties_ProjectileRoofCollapse">
+          <collapseRange>2</collapseRange>
+        </li>
+      </comps>
+  </ThingDef>
+-->
+  <ThingDef ParentName="BaseBullet">
+    <defName>PlasmaShot</defName>
+    <label>plasma shot</label>
+    <graphicData>
+      <texPath>Things/BulletPlasma</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Flame</damageDef>
+      <damageAmountBase>14</damageAmountBase>
+	    <armorPenetrationBase>0.10</armorPenetrationBase>
+      <speed>60</speed>
+    </projectile>
+    <!--
+    <comps>      
+      <li Class="AthenaFramework.CompProperties_ProjectileImpactEffect">
+      <fleck>Fleck_Burn</fleck>
+      </li>
+    </comps>
+    -->
+  </ThingDef>
+
+</Defs>
