@@ -33,23 +33,25 @@
   <DamageDef>
     <defName>SA_Nyx</defName>
     <label>nyx</label>
-    <workerClass>DamageWorker_AddInjury</workerClass>
+    <workerClass>DamageWorker_Stab</workerClass>
     <externalViolence>true</externalViolence>
     <deathMessage>{0} has died to nyx affliction.</deathMessage>
-    <hediff>SA_NyxAffliction</hediff>
-     <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <hediff>Stab</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
   <additionalHediffs>
     <li>
       <hediff>SA_NyxAffliction</hediff>
-      <severityPerDamageDealt>0.3</severityPerDamageDealt>
+      <severityPerDamageDealt>0.05</severityPerDamageDealt>
     </li>
   </additionalHediffs>
-    <impactSoundType>Bullet</impactSoundType>
-    <armorCategory>Sharp</armorCategory>
-    <overkillPctToDestroyPart>0~1</overkillPctToDestroyPart>
-    <isRanged>true</isRanged>
-    <makesAnimalsFlee>true</makesAnimalsFlee>
-    <defaultDamage>8</defaultDamage>
+    <damageEffecter>Impact_Toxic</damageEffecter>	 
+   <!-- <overkillPctToDestroyPart>0~1</overkillPctToDestroyPart>-->
+    <isRanged>false</isRanged>
+    <makesAnimalsFlee>false</makesAnimalsFlee>
+    <defaultDamage>5</defaultDamage>
   	<explosionCellFleck>BlastEMP</explosionCellFleck>
     <defaultArmorPenetration>0.5</defaultArmorPenetration>
 	  <defaultStoppingPower>1.2</defaultStoppingPower>
@@ -57,5 +59,29 @@
     <buildingDamageFactorPassable>0.2</buildingDamageFactorPassable>
 	  <soundExplosion>Explosion_Stun</soundExplosion>
   </DamageDef>
+
+  
+  <ToolCapacityDef>
+    <defName>SA_NyxSlice</defName>
+    <label>nyx slice</label>
+  </ToolCapacityDef>
+
+  <ManeuverDef>
+    <defName>SA_NyxSlice</defName>
+    <requiredCapacity>SA_NyxSlice</requiredCapacity>
+    <verb>
+      <verbClass>Verb_MeleeAttackDamage</verbClass>
+      <meleeDamageDef>SA_Nyx</meleeDamageDef>
+    </verb>
+    <logEntryDef>MeleeAttack</logEntryDef>
+    <combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+    <combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+    <combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+    <combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+  </ManeuverDef>
+  
+  
+  
+  
 
 </Defs>

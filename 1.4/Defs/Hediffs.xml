@@ -1,54 +1,52 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <HediffDef>
+  <HediffDef ParentName="DiseaseBase">
     <defName>SA_NyxAffliction</defName>
     <label>nyx affliction</label>
     <description>Atoms forming the body have been destabilized by a nyx field, causing issues with the natural regenerations due to cells not being able to function.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
+	<isBad>true</isBad>
     <tendable>false</tendable>
     <lethalSeverity>1</lethalSeverity>
+  <initialSeverity>0.01</initialSeverity>
+  <maxSeverity>1</maxSeverity>
     <comps>
-      <li Class="HediffCompProperties_Immunizable">
-        <compClass>HediffComp_ImmunizableToxic</compClass>
-        <severityPerDayNotImmune>-0.08</severityPerDayNotImmune>
-      </li>
+  <li Class="HediffCompProperties_SeverityPerDay">
+      <severityPerDay>-1.0</severityPerDay>
+   </li>
     </comps>
+	
+	
     <stages>
       <li>
         <label>initial</label>
         <minSeverity>0.2</minSeverity>
-        <painFactor>1.1</painFactor>
+        <painFactor>1.05</painFactor>
         <naturalHealingFactor>0.95</naturalHealingFactor>
-        <totalBleedFactor>1.1</totalBleedFactor>
+        <totalBleedFactor>1.05</totalBleedFactor>
       </li>
       <li>
         <label>moderate</label>
-        <minSeverity>0.8</minSeverity>
-        <painFactor>1.25</painFactor>
-        <naturalHealingFactor>0.80</naturalHealingFactor>
-        <totalBleedFactor>1.2</totalBleedFactor>
+        <minSeverity>0.4</minSeverity>
+        <painFactor>1.1</painFactor>
+        <naturalHealingFactor>0.85</naturalHealingFactor>
+        <totalBleedFactor>1.1</totalBleedFactor>
       </li>
       <li>
         <label>serious</label>
-        <minSeverity>1.2</minSeverity>
-        <painFactor>1.45</painFactor>
-        <naturalHealingFactor>0.65</naturalHealingFactor>
-        <totalBleedFactor>1.35</totalBleedFactor>
+        <minSeverity>0.6</minSeverity>
+        <painFactor>1.2</painFactor>
+        <naturalHealingFactor>0.75</naturalHealingFactor>
+        <totalBleedFactor>1.2</totalBleedFactor>
       </li>
       <li>
         <label>extreme</label>
-        <minSeverity>1.8</minSeverity>
-        <painFactor>1.55</painFactor>
-        <naturalHealingFactor>0.45</naturalHealingFactor>
-        <totalBleedFactor>1.60</totalBleedFactor>
-        <capMods>
-          <li>
-            <capacity>Consciousness</capacity>
-            <setMax>0.80</setMax>
-          </li>
-        </capMods>
+        <minSeverity>0.8</minSeverity>
+        <painFactor>1.3</painFactor>
+        <naturalHealingFactor>0.65</naturalHealingFactor>
+        <totalBleedFactor>1.3</totalBleedFactor>
         <hediffGivers>
           <li Class="HediffGiver_Random">
             <hediff>Carcinoma</hediff>

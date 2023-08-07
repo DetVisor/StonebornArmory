@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<ThingDef ParentName="ApparelArmorPowerBase">
+    <defName>SDApparel_PowerRig</defName>
+    <label>power rig</label>
+    <description>A suit of powered armor. Layered plasteel-weave plates are very effective at stopping attacks, with few vulnerable joint sections. Neuro-memetic assistors allow a human to wear the armor and still move easily.\n\nArmor like this is often used by rapid-incursion space marines.</description>
+    <graphicData>
+        <texPath>Things/Armor/PowerRig/PowerRig</texPath>
+        <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <displayPriority>105</displayPriority>
+    </recipeMaker>
+    <apparel>
+      <tags>
+        <li>SpacerMilitary</li>
+      </tags>
+      <wornGraphicPath>Things/Armor/PowerRig/PowerRig</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
+    </apparel>
+    <comps>
+      <li Class="AthenaFramework.CompProperties_CustomApparelBody">
+        <preventBodytype>true</preventBodytype>
+        <forcedBodytype>Hulk</forcedBodytype>
+        <hideBody>true</hideBody>
+      </li>
+      <li Class="AthenaFramework.CompProperties_AdditionalApparelGraphics">
+        <additionalGraphics>
+         <li>
+           <graphicData>
+            <graphicClass>Graphic_Multi</graphicClass>      
+            <texPath>Things/Armor/PowerRig/RigShoulder</texPath>
+            <drawSize>1.4</drawSize>
+           </graphicData>
+           <useBodytype>false</useBodytype>
+           <offsets>
+             <li>(0, 0.01, 0)</li>
+           </offsets>
+        </li>
+        </additionalGraphics>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>
