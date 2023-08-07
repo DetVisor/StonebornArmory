@@ -1,8 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <ThingDef ParentName="ArmorHelmetMakeableBase">
+    <defName>SAApparel_PowerRigHelmet</defName>
+    <label>power rig helmet</label>
+    <description>A lightweight combat helmet with a complex design, reinforced with plasteel. Not effective against blunt weapons.</description>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <displayPriority>205</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Armor/PowerRigHelmet/PowerRigHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <statBases>
+      <WorkToMake>8000</WorkToMake>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>1.2</Mass>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <costList>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Plasteel>10</Plasteel>
+    </costList>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Armor/PowerRigHelmet/PowerRigHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>IndustrialMilitaryAdvanced</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <tradeTags>
+      <li>Armor</li>
+    </tradeTags>
+  </ThingDef>
+
 <ThingDef ParentName="ApparelArmorPowerBase">
-    <defName>SDApparel_PowerRig</defName>
+    <defName>SAApparel_PowerRig</defName>
     <label>power rig</label>
     <description>A suit of powered armor. Layered plasteel-weave plates are very effective at stopping attacks, with few vulnerable joint sections. Neuro-memetic assistors allow a human to wear the armor and still move easily.\n\nArmor like this is often used by rapid-incursion space marines.</description>
     <graphicData>
@@ -44,7 +92,7 @@
            </graphicData>
            <useBodytype>false</useBodytype>
            <offsets>
-             <li>(0, 0.01, 0)</li>
+             <li>(0, 0.032, 0)</li>
            </offsets>
         </li>
         </additionalGraphics>
