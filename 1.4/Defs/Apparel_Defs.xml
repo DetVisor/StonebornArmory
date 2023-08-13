@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="ApparelMakeableBase">
+        <defName>SA_Undersuit</defName>
+        <label>padded undersuit</label>
+        <description>A padded full-body suit required to be able to wear powered rigs.</description>
+        <recipeMaker>
+          <researchPrerequisite>ComplexClothing</researchPrerequisite>
+          <displayPriority>205</displayPriority>
+        </recipeMaker>
+        <graphicData>
+          <texPath>Things/Apparel/Undersuit</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <costStuffCount>65</costStuffCount>
+        <stuffCategories>
+          <li>Fabric</li>
+          <li>Leathery</li>
+        </stuffCategories>
+        <thingCategories>
+          <li>ApparelMisc</li>
+        </thingCategories>
+        <statBases>
+          <MaxHitPoints>120</MaxHitPoints>
+          <WorkToMake>3000</WorkToMake>
+          <Mass>0.5</Mass>
+          <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+          <StuffEffectMultiplierInsulation_Cold>0.22</StuffEffectMultiplierInsulation_Cold>
+          <StuffEffectMultiplierInsulation_Heat>0.10</StuffEffectMultiplierInsulation_Heat>
+          <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <apparel>
+          <bodyPartGroups>
+            <li>Torso</li>
+            <li>Shoulders</li>
+            <li>Arms</li>
+            <li>Legs</li>
+          </bodyPartGroups>
+          <wornGraphicPath>Things/Apparel/Undersuit</wornGraphicPath>
+          <layers>
+            <li>OnSkin</li>
+          </layers>
+          <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+        </apparel>
+        <comps>
+            <li Class="AthenaFramework.CompProperties_CustomApparelBody">
+              <preventBodytype>true</preventBodytype>
+            </li>
+          </comps>
+        <colorGenerator Class="ColorGenerator_StandardApparel" />
+        <tradeTags>
+          <li>BasicClothing</li>
+        </tradeTags>
+      </ThingDef>
+
+</Defs>

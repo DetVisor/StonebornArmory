@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <!-- Nyx Boltcaster -->
+
+  <ThingDef ParentName="BaseGunWithQuality">
+    <techLevel>Spacer</techLevel>
+    <defName>SA_NyxBoltcaster</defName>
+    <label>nyx boltcaster</label>
+    <description>A short revolver pistol built to accompany its larger brother, the stoutrifle. It packs a massive punch with every shot, and its size allows its user to quickly acquire his or her target. Such stopping power is always welcome in a infested tunnel to make a megaspider drop dead, though its single-fire design has drawn many complaints from trigger-happy stoneborn.</description>
+    <graphicData>
+      <drawSize>1.04</drawSize>
+      <texPath>Things/Weapons/NyxBoltcaster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	    <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <thingSetMakerTags><li>RewardStandardCore</li></thingSetMakerTags>
+	  <weaponTags>
+      <li>DwarfBasic</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <statBases>
+	  <MarketValue>1250</MarketValue> 
+	    <DeteriorationRate>0</DeteriorationRate>
+      <Mass>3.4</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+
+    <costList>
+      <Steel>65</Steel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>NyxArrow</defaultProjectile>
+        <warmupTime>1.2</warmupTime>
+        <range>28.5</range>
+        <soundCast>Bow_Large</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>2</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
 <!-- Squatcannon -->
 
   <ThingDef ParentName="BaseGunWithQuality">
@@ -289,7 +353,6 @@
     <defName>SA_Chainborer</defName>
     <label>chainborer</label>
     <description>A sturdy and compact firearm designed to fire obscenely large rounds repeatedly. Built for close-quarter fights underground, where there's little room to maneuver, the weapon is meant to decisively win battles by (hopefully) gibbing whoever or whatever is on the wrong end of it. Not even its designers are able to properly control its recoil, and the size of its ammo limits its drum magazine's capacity. But when going up against massive beasts or armored opponents, its sheer stopping power and kinetic force is well appreciated.</description>
-    <equippedAngleOffset>45</equippedAngleOffset>
     <graphicData>
       <drawSize>1.3</drawSize>
       <texPath>Things/Weapons/Chainborer</texPath>
@@ -549,7 +612,239 @@
       </li>
     </tools>
   </ThingDef>
--->
+
+  <ThingDef ParentName="BaseMakeableGrenade">
+    <defName>SA_GrenadeDrunk</defName>
+    <label>drunk grenades</label>
+    <description>Grenades loaded with almost pure alcohol. Upon landing, they stick to the ground and release tox gas for several seconds.\n\nTox gas burns the lungs and eyes, causing a temporary shortness of breath and reduction in sight. Continued exposure to tox gas results in toxic buildup which can be lethal.</description>
+    <possessionCount>1</possessionCount>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Weapons/DrunkGrenades</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.3</uiIconScale>
+    <soundInteract>Interact_Grenade</soundInteract>
+    <techLevel>Spacer</techLevel>
+    <statBases>
+      <Mass>1.1</Mass>
+      <RangedWeapon_Cooldown>2.7</RangedWeapon_Cooldown>
+      <WorkToMake>24000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>20</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>ToxGas</researchPrerequisite>
+    </recipeMaker>
+    <weaponTags>
+      <li>GrenadeTox</li>
+    </weaponTags>
+    <thingCategories>
+      <li>Grenades</li>
+    </thingCategories>
+    <verbs>
+      <li>
+        <label>throw drunk grenade</label>
+        <verbClass>Verb_LaunchProjectile</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>11.9</range>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        <warmupTime>1.5</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <defaultProjectile>Proj_GrenadeDrunk</defaultProjectile>
+        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.66</explosiveRadius>
+        <explosiveDamageType>DrunkFumes</explosiveDamageType>
+        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+      </li>
+    </comps>
+    <smeltable>true</smeltable>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>Proj_GrenadeDrunk</defName>
+    <label>drunk grenade</label>
+    <thingClass>AthenaFramework.Projectile_AOEHediff</thingClass>
+    <graphicData>
+      <texPath>Things/BulletDrunkGrenade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>DrunkFumes</damageDef>
+      <postExplosionSpawnChance>0.5</postExplosionSpawnChance>
+      <postExplosionSpawnThingDef>Filth_Fuel</postExplosionSpawnThingDef>
+      <postExplosionSpawnThingCount>3</postExplosionSpawnThingCount>
+      <shadowSize>0.5</shadowSize>
+      <explosionDelay>0</explosionDelay>
+    </projectile>
+    <modExtensions>
+      <li Class="AthenaFramework.HediffProjectileExtension">
+        <radius>1.5</radius>
+        <hediff>AlcoholHigh</hediff>
+        <initialSeverity>0.7</initialSeverity>
+        <tileFleck>BlastDry</tileFleck>
+	    </li>
+  	</modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>SA_DwarvenSkewer</defName>
+    <label>dwarven skewer</label>
+    <description>A short polearm with a sharp double-sided blade at the end. Good for stabbing bugs.</description>
+    <graphicData>
+      <texPath>Things/Weapons/DwarvenSpear</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <weaponTags>
+      <li>Spear</li>
+    </weaponTags>
+    <costStuffCount>75</costStuffCount>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>2</Mass>
+    </statBases>
+    <comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_GeneratedName">
+        <nameMaker>NamerWeaponDwarven</nameMaker>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtFurniture</nameMaker>
+        <descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+    </comps>
+    <equippedAngleOffset>-60</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <tools>
+      <li>
+        <label>shaft</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>13</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>25</power>
+        <armorPenetration>0.50</armorPenetration>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>LongBlades</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <displayPriority>330</displayPriority>
+    </recipeMaker>
+    <modExtensions>
+      <li Class="AthenaFramework.AimAngleOffsetExtension">
+        <angleOffset>25</angleOffset>
+	   </li>
+	</modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>SA_DwarvenSlasher</defName>
+    <label>dwarven slasher</label>
+    <description>The ancient weapon of kings, the longsword can be used for slashing or stabbing.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Weapons/DwarvenSlasher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <weaponTags>
+      <li>LongSword</li>
+    </weaponTags>
+    <costStuffCount>125</costStuffCount>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>2</Mass>
+    </statBases>
+    <comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_GeneratedName">
+        <nameMaker>NamerWeaponDwarven</nameMaker>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtFurniture</nameMaker>
+        <descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+    </comps>
+    <relicChance>2</relicChance>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2.4</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>LongBlades</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <displayPriority>420</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
   <!-- Bullet -->
 
   <ThingDef ParentName="BaseBullet">
@@ -657,6 +952,29 @@
       <damageAmountBase>14</damageAmountBase>
 	    <armorPenetrationBase>0.10</armorPenetrationBase>
       <speed>60</speed>
+    </projectile>
+    <!--
+    <comps>      
+      <li Class="AthenaFramework.CompProperties_ProjectileImpactEffect">
+      <fleck>Fleck_Burn</fleck>
+      </li>
+    </comps>
+    -->
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>NyxArrow</defName>
+    <label>nyx bolt</label>
+    <graphicData>
+      <texPath>Things/BulletNyxBolt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.9</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>SA_Nyx</damageDef>
+      <damageAmountBase>4</damageAmountBase>
+	    <armorPenetrationBase>0.25</armorPenetrationBase>
+      <speed>52</speed>
     </projectile>
     <!--
     <comps>      

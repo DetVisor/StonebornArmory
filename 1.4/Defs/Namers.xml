@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<RulePackDef>
+    <defName>NamerWeaponDwarven</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_weapon_name(p=4)->[noun][verber]</li>
+        <li>r_weapon_name(p=3)->[beginSyl][middleSyl][endSyl]</li>
+        <li>r_weapon_name(p=2)->[beginSyl][endSyl]</li>
+        <li>r_weapon_name(p=1)->[name]</li>
+
+        <li>noun->stone</li>
+        <li>noun->forge</li>
+        <li>noun->hearth</li>
+        <li>noun->pain</li>
+        <li>noun->bug</li>
+        <li>noun->hive</li>
+        <li>noun->iron</li>
+        <li>noun->mead</li>
+        <li>noun->ale</li>
+        <li>noun->coal</li>
+        <li>noun->hall</li>
+        <li>noun->rock</li>
+        <li>noun->war</li>
+        <li>noun->horn</li>
+        <li>noun->mountain</li>
+        <li>verber->keeper</li>
+        <li>verber->bringer</li>
+        <li>verber->sender</li>
+        <li>verber->giver</li>
+        <li>verber->maker</li>
+        <li>verber->crusher</li>
+        <li>verber->breaker</li>
+        <li>verber->smasher</li>
+        <li>verber->bender</li>
+        <li>verber->knower</li>
+        <li>verber->doer</li>
+
+        <li>beginSyl->sar</li>
+        <li>beginSyl->vin</li>
+        <li>beginSyl->gan</li>
+        <li>beginSyl->dwin</li>
+        <li>beginSyl->tho</li>
+        <li>beginSyl->dwa</li>
+        <li>beginSyl->bom</li>
+        <li>beginSyl->bi</li>
+        <li>beginSyl->bo</li>
+        <li>beginSyl->del</li>
+        <li>middleSyl->dli</li>
+        <li>middleSyl->gir</li>
+        <li>middleSyl->lor</li>
+        <li>middleSyl->hun</li>
+        <li>middleSyl->lin</li>
+        <li>endSyl->lin</li>
+        <li>endSyl->dil</li>
+        <li>endSyl->ar</li>
+        <li>endSyl->sum</li>
+        <li>endSyl->mar</li>
+        <li>endSyl->gur</li>
+
+        <li>name->Dwalin</li>
+        <li>name->Gimli</li>
+        <li>name->Thorin</li>
+        <li>name->Balin</li>
+        <li>name->Bilbo</li>
+        <li>name->Gandalf</li>
+        <li>name->Aragorn</li>
+        <li>name->Saruman</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>

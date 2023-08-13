@@ -47,7 +47,7 @@
       <severityPerDamageDealt>0.05</severityPerDamageDealt>
     </li>
   </additionalHediffs>
-    <damageEffecter>Impact_Toxic</damageEffecter>	 
+    <damageEffecter>Impact_Nyx</damageEffecter>	 
    <!-- <overkillPctToDestroyPart>0~1</overkillPctToDestroyPart>-->
     <isRanged>false</isRanged>
     <makesAnimalsFlee>false</makesAnimalsFlee>
@@ -79,6 +79,53 @@
     <combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
     <combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
   </ManeuverDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_NyxDamage</defName>
+    <graphicData>
+      <texPath>Things/Mote/ToxicDamage</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.04</fadeInTime>
+      <solidTime>0.03</solidTime>
+      <fadeOutTime>1</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>Impact_Nyx</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_NyxDamage</moteDef>
+        <positionRadius>0.1</positionRadius>
+        <burstCount>3</burstCount>
+        <scale>1~1.4</scale>
+        <color>(0.6,0.4,0.5,1)</color>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <DamageDef>
+    <defName>DrunkFumes</defName>
+    <label>drunk fumes</label>
+    <canInterruptJobs>false</canInterruptJobs>
+    <makesBlood>false</makesBlood>
+    <defaultDamage>5</defaultDamage>
+    <additionalHediffs>
+      <li>
+        <hediff>AlcoholHigh</hediff>
+        <severityPerDamageDealt>1</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+    <explosionCellFleck>BlastExtinguisher</explosionCellFleck>
+    <explosionColorEdge>(0.706, 0.839, 0.09, 0.05)</explosionColorEdge>
+    <harmsHealth>false</harmsHealth>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Smoke</combatLogRules>
+  </DamageDef>
   
   
   
